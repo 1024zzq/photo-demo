@@ -10,7 +10,7 @@ public class PasswordInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String password = request.getParameter("pw");
-        if (password == null || !password.equals("547061946")) {
+        if (password == null || !password.equals("123")) {
             response.sendRedirect("index.html");
             return false;
         }
