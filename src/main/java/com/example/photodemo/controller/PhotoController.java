@@ -30,7 +30,7 @@ public class PhotoController {
 
     @GetMapping("/images")
     public List<String> getImages() throws IOException {
-        String imagePath = "D:\\img";
+        String imagePath = "./img";
         List<String> images = new ArrayList<>();
         listFiles(imagePath, images);
         return images;
@@ -63,7 +63,7 @@ public class PhotoController {
         BufferedImage image = ImageIO.read(new ByteArrayInputStream(imageBytes));
         //存放位置
         String[] arr = new SimpleDateFormat("yyyyMMdd/HH_ss_mm").format(new Date()).split("/");
-        File outputFile = new File("D:\\img\\"+arr[0]+"\\"+arr[1]+".png");
+        File outputFile = new File("./img/"+arr[0]+"/"+arr[1]+".png");
         System.out.println(outputFile);
         outputFile.mkdirs();
         ImageIO.write(image, "png", outputFile);
